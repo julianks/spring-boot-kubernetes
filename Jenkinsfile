@@ -37,7 +37,7 @@ pipeline {
         steps {
             figlet 'SCA'
             //sh "$SCA --project 'spring-clinic' --scan '${WORKSPACE}/build/libs/pet-clinic-2.6.0.jar'"
-            echo '************** SBOM CYCLONEDX **************'
+            echo '************* SBOM CYCLONEDX *************'
             //sh "./gradlew cyclonedxBom -info"
         }
      }
