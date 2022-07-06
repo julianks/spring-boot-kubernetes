@@ -1,11 +1,11 @@
 pipeline {
     agent any 
-    environment {
-       DOCKER = tool 'docker' 
-       DOCKER_EXEC = '$DOCKER/docker'
-       SCA = '/Users/clagosu/Documents/dependency-check/bin/dependency-check.sh'
-       TRIVY = '/Users/clagosu/Documents/trivy_0.29.2_macOS-64bit/trivy'
-    }
+   //  environment {
+   //     DOCKER = tool 'docker' 
+   //     DOCKER_EXEC = '$DOCKER/docker'
+   //     SCA = '/Users/clagosu/Documents/dependency-check/bin/dependency-check.sh'
+   //     TRIVY = '/Users/clagosu/Documents/trivy_0.29.2_macOS-64bit/trivy'
+   //  }
     stages {
       
       stage('SCM') {
@@ -24,14 +24,14 @@ pipeline {
          }
       }
         
-      stage('SAST') {
-         steps {
-            withCredentials([string(credentialsId: 'sonarcloud', variable: 'SONARPAT')]) {
-                 figlet 'SAST'
-                 sh('set +x; ./mvnw sonarqube -Dsonar.login=$SONARPAT -Dsonar.branch.name=feature-jenkins')
-            }
-         }
-      }
+      // stage('SAST') {
+      //    steps {
+      //       withCredentials([string(credentialsId: 'sonarcloud', variable: 'SONARPAT')]) {
+      //            figlet 'SAST'
+      //            sh('set +x; ./mvnw sonarqube -Dsonar.login=$SONARPAT -Dsonar.branch.name=feature-jenkins')
+      //       }
+      //    }
+      // }
         
    //    stage('SCA') {
    //      steps {
