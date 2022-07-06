@@ -10,14 +10,14 @@ pipeline {
       
       stage('SCM') {
          steps {
-            figlet 'SCM'
+            // figlet 'SCM'
             checkout scm // clonacion de codigo en nodo
          }
       }
         
       stage('BUILD') {
          steps {
-            figlet 'BUILD'
+            // figlet 'BUILD'
             sh 'set +x; chmod 777 mvnw'
             //sh './mvnw clean build'
           //archiveArtifacts artifacts: "build/libs/testing-web-*.jar"
