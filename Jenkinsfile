@@ -18,7 +18,7 @@ pipeline {
       stage('BUILD') {
          steps {
             // figlet 'BUILD'
-            sh 'set +x; chmod 777 mvnw'
+            sh 'chmod +x mvnw'
             //sh './mvnw clean build'
           //archiveArtifacts artifacts: "build/libs/testing-web-*.jar"
          }
